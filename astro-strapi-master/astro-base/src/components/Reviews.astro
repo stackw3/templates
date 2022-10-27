@@ -1,0 +1,58 @@
+---
+
+
+const response = await fetch('http://localhost:1337/api/reviews');
+const data = await response.json();
+    
+    
+---
+
+<div class="container">
+	
+		<h2>
+			Reviews
+			
+		</h2>
+		<p>
+		 {data.data.map((review: { attributes: { title: string, body : string, rating : number } }) => {
+			return <div class="card">
+					<h4>{review.attributes.title} <span> Rating : {review.attributes.rating}</span></h4>
+					<p class="body_text">{review.attributes.body}</p>
+				</div>
+		 })}
+		</p>
+	
+</div>
+<style>
+	:root {
+		--link-gradient: linear-gradient(45deg, #4f39fa, #da62c4 30%, var(--color-border) 60%);
+	}
+
+h2{
+	font-weight: 900;
+		background-image: var(--astro-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		border-radius: 0.4rem;
+		animation: pulse 4s ease-in-out infinite;
+}
+
+h4{
+	color: #282257;
+}
+
+	span{
+		margin-left: 20px;
+		color: rgb(204, 5, 5);
+	}
+	.card{
+		width: 50vw;
+		
+	}
+
+	.body_text{
+		color: rgb(92, 92, 92);
+	}
+</style>
