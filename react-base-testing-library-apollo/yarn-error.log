@@ -1,0 +1,74 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\ceejeey\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @testing-library/react @apollo/client graphql @graphql-tools/mock @graphql-tools/schema
+
+PATH: 
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ceejeey\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Android;C:\Program Files\PuTTY;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\Amazon\AWSCLIV2;C:\Program Files\NVIDIA Corporation\NVIDIA NGX;C:\Users\ceejeey\AppData\Local\Programs\Python\Python37-32\Scripts;C:\Users\ceejeey\AppData\Local\Programs\Python\Python37-32;C:\Users\ceejeey\AppData\Local\Microsoft\WindowsApps;C:\Users\ceejeey\AppData\Local\Programs\Fiddler;C:\Users\ceejeey\AppData\Roaming\Composer\vendor\bin;C:\Users\ceejeey\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ceejeey\AppData\Local\Microsoft\WindowsApps;C:\Users\ceejeey\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  14.18.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.16.7.tgz: Request failed "404 Not Found"
+      at ResponseError.ExtendableBuiltin (C:\Users\ceejeey\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:696:66)
+      at new ResponseError (C:\Users\ceejeey\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:802:124)
+      at Request.<anonymous> (C:\Users\ceejeey\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:67099:16)
+      at Request.emit (events.js:400:28)
+      at Request.module.exports.Request.onRequestResponse (C:\Users\ceejeey\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141760:10)
+      at ClientRequest.emit (events.js:400:28)
+      at HTTPParser.parserOnIncomingClient (_http_client.js:647:27)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:127:17)
+      at HTTPParser.execute (<anonymous>)
+      at TLSSocket.socketOnData (_http_client.js:515:22)
+
+npm manifest: 
+  {
+    "name": "react-base-ts",
+    "version": "0.0.0",
+    "scripts": {
+      "dev": "vite",
+      "start": "npm run dev",
+      "build": "tsc && vite build",
+      "serve": "vite preview",
+      "prepare": "husky install",
+      "format": "prettier --write src/**/*.ts{,x}",
+      "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
+      "lint:format": "prettier --write --ignore-path .gitignore \"**/*.+(js|json)\"",
+      "lint": "npm-run-all --parallel lint:format lint:fix"
+    },
+    "dependencies": {
+      "react": "^17.0.0",
+      "react-dom": "^17.0.0"
+    },
+    "devDependencies": {
+      "@types/react": "^17.0.0",
+      "@types/react-dom": "^17.0.0",
+      "@typescript-eslint/eslint-plugin": "^5.6.0",
+      "@typescript-eslint/parser": "^5.6.0",
+      "@vitejs/plugin-react-refresh": "^1.3.6",
+      "eslint": "^8.4.1",
+      "eslint-config-prettier": "^8.3.0",
+      "eslint-plugin-import": "^2.25.3",
+      "eslint-plugin-jsx-a11y": "^6.5.1",
+      "eslint-plugin-prettier": "^4.0.0",
+      "eslint-plugin-react": "^7.27.1",
+      "eslint-plugin-simple-import-sort": "^7.0.0",
+      "lint-staged": "^12.1.2",
+      "npm-run-all": "^4.1.5",
+      "prettier": "^2.5.1",
+      "typescript": "^4.3.2",
+      "vite": "^2.6.4",
+      "husky": "^7.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
