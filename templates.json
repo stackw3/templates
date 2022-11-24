@@ -1,0 +1,33 @@
+[{
+		"name": "astro-strapi",
+		"sha": "a88f7065ed3e7ba4ea46ab98c510b12f669e45d7"
+	},
+	{
+		"name": "next-hover-base",
+		"sha": "2179a09c76e6a606a70585af5d77e1cdbd1ef649"
+	},
+	{
+		"name": "next-react-query",
+		"sha": "9366c76d4177d8ddb73f4198aa53e8b4471fdf65"
+	},
+	{
+		"name": "react-base-router-configs",
+		"sha": "241ccee0bfdeed63875c8b7c70017bd979c489e0"
+	},
+	{
+		"name": "react-base-testing-library-apollo",
+		"sha": "af9deb94df2d23e8450b7751211f364f87fcac70"
+	},
+	{
+		"name": "react-base-testing-library-react-query",
+		"sha": "45c952997e095ea28ee2eb65228f8a3f59fe9457"
+	},
+	{
+		"name": "react-base-testing-library",
+		"sha": "e76100110fc47e7329d078a1dbccad85c158047c"
+	},
+	{
+		"name": "react-base",
+		"sha": "f8d484e8897df24f02c68028af35a29102b2e3cd"
+	}
+]
