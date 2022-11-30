@@ -7,7 +7,9 @@
 
 
 ## Monorepo 
-    A monorepo is a version-controlled code repository that holds many projects. While these projects may be related, they are often logically independent and run by different teams.
+
+- A monorepo is a version-controlled code repository that holds many projects. While these projects may be related, they are often logically independent and run by different teams.
+ 
 
 ### Features
 
@@ -55,18 +57,9 @@ Please adhere to this project's `code of conduct`.
 
 ## Documentation
 
-[Documentation](https://github.com/stackw3/templates) // Update later 
-
-
-## FAQ
-
-#### Question 1
-
-Answer 1
-
-#### Question 2
-
-Answer 2
+[Documentation](https://github.com/stackw3/templates) <!---
+Update later
+-->
 
 
 ## Used By
