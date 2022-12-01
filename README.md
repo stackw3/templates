@@ -1,6 +1,6 @@
 # StackW3 Templates
 
- It is a collection of standard templates, to copy any template go to stackw3.app
+ It is a collection of standard templates, to copy any template go to [StackW3](https://www.stackw3.app/)
 
 
 ### Features
@@ -13,8 +13,6 @@
 
 
 ## Badges
-
-Add badges from somewhere like: [shields.io](https://shields.io/)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
@@ -53,7 +51,7 @@ Please adhere to this project's `code of conduct`.
 
 ## Documentation
 
-[Documentation](https://github.com/stackw3/templates) <!---
+[Documentation](https://github.com/stackw3/docs) <!---
 Update later
 -->
 
