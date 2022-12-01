@@ -18,10 +18,11 @@
 ![](https://img.shields.io/badge/all%20contributors-4-brightgreen)
 ![](https://img.shields.io/github/stars/stackw3/templates?style=social)
 ![](https://img.shields.io/github/forks/stackw3/templates?style=social)
-![](https://img.shields.io/badge/issues-33%20open-yellow)
-![](https://img.shields.io/badge/issue%20979-closed-6f42c1)
-![](https://img.shields.io/badge/Stars-7k-lightgrey?logo=github&style=social)
-![](https://img.shields.io/badge/Tweet--lightgrey?logo=twitter&style=social)
+![](https://img.shields.io/github/watchers/stackw3/templates?style=social)
+![](https://img.shields.io/github/issues/stackw3/templates)
+![](https://img.shields.io/github/issues-closed/stackw3/templates)
+![](https://img.shields.io/github/issues-pr/stackw3/templates)
+![](https://img.shields.io/github/issues-pr-closed/stackw3/templates)
 
 
 ## Templates
