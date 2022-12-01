@@ -14,14 +14,10 @@
 
 ## Badges
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
-[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
-
-![](https://img.shields.io/badge/black-v19.3b0-orange)
-![](https://img.shields.io/badge/minified%20size-6.65%20kB-informational)
-![](https://img.shields.io/badge/files-20-blue)
-![](https://img.shields.io/badge/downloads-2.2M-brightgreen)
+![](https://img.shields.io/badge/templates-8-brightgreen)
+![](https://img.shields.io/badge/all%20contributors-4-brightgreen)
+![](https://img.shields.io/github/stars/stackw3/templates?style=social)
+![](https://img.shields.io/github/forks/stackw3/templates?style=social)
 ![](https://img.shields.io/badge/issues-33%20open-yellow)
 ![](https://img.shields.io/badge/issue%20979-closed-6f42c1)
 ![](https://img.shields.io/badge/Stars-7k-lightgrey?logo=github&style=social)
