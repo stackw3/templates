@@ -1,6 +1,6 @@
 # StackW3 Templates
 
- Single repository containing multiple templates
+ It is a collection of standard templates, to copy any template go to stackw3.app
 
 
 ## Monorepo 
