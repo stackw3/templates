@@ -1,15 +1,8 @@
 
-# HouseOfTemplates
+# StackW3 Templates
 
- Single repository containing multiple distinct projects
+ It is a collection of standard templates, to copy any template go to [StackW3](https://www.stackw3.app/)
 
-
-
-
-## Monorepo 
-
-- A monorepo is a version-controlled code repository that holds many projects. While these projects may be related, they are often logically independent and run by different teams.
- 
 
 ### Features
 
@@ -22,28 +15,35 @@
 
 ## Badges
 
-Add badges from somewhere like: [shields.io](https://shields.io/)
+![](https://img.shields.io/github/languages/code-size/stackw3/templates)
+![](https://img.shields.io/github/directory-file-count/stackw3/templates?type=dir)
+![](https://img.shields.io/github/repo-size/stackw3/templates)
+![](https://img.shields.io/github/downloads/stackw3/templates/total)
+![](https://img.shields.io/github/commit-activity/y/stackw3/templates/abhinav/template)
+![](https://img.shields.io/github/last-commit/stackw3/templates/abhinav/template)
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
-[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
+![](https://img.shields.io/github/languages/count/stackw3/templates)
+![](https://img.shields.io/badge/templates-8-brightgreen)
+![](https://img.shields.io/github/contributors/stackw3/templates)
+![](https://img.shields.io/github/stars/stackw3/templates?style=social)
+![](https://img.shields.io/github/forks/stackw3/templates?style=social)
+![](https://img.shields.io/github/watchers/stackw3/templates?style=social)
+![](https://img.shields.io/github/issues/stackw3/templates)
+![](https://img.shields.io/github/issues-closed/stackw3/templates)
+![](https://img.shields.io/github/issues-pr/stackw3/templates)
+![](https://img.shields.io/github/issues-pr-closed/stackw3/templates)
 
-![](https://img.shields.io/badge/black-v19.3b0-orange)
-![](https://img.shields.io/badge/minified%20size-6.65%20kB-informational)
-![](https://img.shields.io/badge/files-20-blue)
-![](https://img.shields.io/badge/downloads-2.2M-brightgreen)
-![](https://img.shields.io/badge/issues-33%20open-yellow)
-![](https://img.shields.io/badge/issue%20979-closed-6f42c1)
-![](https://img.shields.io/badge/Stars-7k-lightgrey?logo=github&style=social)
-![](https://img.shields.io/badge/Tweet--lightgrey?logo=twitter&style=social)
 
-## Authors
+## Templates
 
-- [@Akhil VC](https://github.com/akhilvc10)
-- [@Ceejeey](https://github.com/akhilvc10)
-- [@Nitin Sirsath](https://github.com/NitinSirsath)
-- [@Abhinav Kumar](https://github.com/abhin1509)
-- [@soham Tamboli](https://github.com/sohamtamboli)
+ - [Astro-Strapi](https://github.com/stackw3/templates/tree/main/astro-strapi)  
+ - [Next-hover-base](https://github.com/stackw3/templates/tree/main/next-hover-base)
+ - [Next-react-query](https://github.com/stackw3/templates/tree/main/next-react-query)
+ - [React-base-router-config](https://github.com/stackw3/templates/tree/main/react-base-router-configs)
+ - [React-base-testing-library-apollo](https://github.com/stackw3/templates/tree/main/react-base-testing-library-apollo)
+ - [React-base-testing-library-react-query](https://github.com/stackw3/templates/tree/main/react-base-testing-library-react-query)
+ - [React-base-testing-library](https://github.com/stackw3/templates/tree/main/react-base-testing-library)
+ - [React-base](https://github.com/stackw3/templates/tree/main/react-base)
 
 
 ## Contributing
@@ -57,9 +57,7 @@ Please adhere to this project's `code of conduct`.
 
 ## Documentation
 
-[Documentation](https://github.com/stackw3/templates) <!---
-Update later
--->
+[Documentation](https://github.com/stackw3/docs) 
 
 
 ## Used By
@@ -70,13 +68,10 @@ This project is used by the following companies:
 - [StackW3](https://www.stackw3.app/) 
 
 
-## Templates
+## Authors
 
- - [Astro-Strapi](https://github.com/stackw3/templates/tree/main/astro-strapi)  
- - [Next-hover-base](https://github.com/stackw3/templates/tree/main/next-hover-base)
- - [Next-react-query](https://github.com/stackw3/templates/tree/main/next-react-query)
- - [React-base-router-config](https://github.com/stackw3/templates/tree/main/react-base-router-configs)
- - [React-base-testing-library-apollo](https://github.com/stackw3/templates/tree/main/react-base-testing-library-apollo)
- - [React-base-testing-library-react-query](https://github.com/stackw3/templates/tree/main/react-base-testing-library-react-query)
- - [React-base-testing-library](https://github.com/stackw3/templates/tree/main/react-base-testing-library)
- - [React-base](https://github.com/stackw3/templates/tree/main/react-base)
+- [@Akhil VC](https://github.com/akhilvc10)
+- [@Ceejeey](https://github.com/akhilvc10)
+- [@Nitin Sirsath](https://github.com/NitinSirsath)
+- [@Abhinav Kumar](https://github.com/abhin1509)
+- [@soham Tamboli](https://github.com/sohamtamboli)
