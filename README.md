@@ -3,11 +3,6 @@
  It is a collection of standard templates, to copy any template go to stackw3.app
 
 
-## Monorepo 
-
-- A monorepo is a version-controlled code repository that holds many projects. While these projects may be related, they are often logically independent and run by different teams.
- 
-
 ### Features
 
 - One place to store all configs and tests. ...
