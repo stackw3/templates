@@ -1,3 +1,4 @@
+
 # StackW3 Templates
 
  It is a collection of standard templates, to copy any template go to [StackW3](https://www.stackw3.app/)
@@ -56,9 +57,7 @@ Please adhere to this project's `code of conduct`.
 
 ## Documentation
 
-[Documentation](https://github.com/stackw3/docs) <!---
-Update later
--->
+[Documentation](https://github.com/stackw3/docs) 
 
 
 ## Used By
