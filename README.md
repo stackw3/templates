@@ -29,13 +29,17 @@ Add badges from somewhere like: [shields.io](https://shields.io/)
 ![](https://img.shields.io/badge/Stars-7k-lightgrey?logo=github&style=social)
 ![](https://img.shields.io/badge/Tweet--lightgrey?logo=twitter&style=social)
 
-## Authors
 
-- [@Akhil VC](https://github.com/akhilvc10)
-- [@Ceejeey](https://github.com/akhilvc10)
-- [@Nitin Sirsath](https://github.com/NitinSirsath)
-- [@Abhinav Kumar](https://github.com/abhin1509)
-- [@soham Tamboli](https://github.com/sohamtamboli)
+## Templates
+
+ - [Astro-Strapi](https://github.com/stackw3/templates/tree/main/astro-strapi)  
+ - [Next-hover-base](https://github.com/stackw3/templates/tree/main/next-hover-base)
+ - [Next-react-query](https://github.com/stackw3/templates/tree/main/next-react-query)
+ - [React-base-router-config](https://github.com/stackw3/templates/tree/main/react-base-router-configs)
+ - [React-base-testing-library-apollo](https://github.com/stackw3/templates/tree/main/react-base-testing-library-apollo)
+ - [React-base-testing-library-react-query](https://github.com/stackw3/templates/tree/main/react-base-testing-library-react-query)
+ - [React-base-testing-library](https://github.com/stackw3/templates/tree/main/react-base-testing-library)
+ - [React-base](https://github.com/stackw3/templates/tree/main/react-base)
 
 
 ## Contributing
@@ -62,13 +66,10 @@ This project is used by the following companies:
 - [StackW3](https://www.stackw3.app/) 
 
 
-## Templates
+## Authors
 
- - [Astro-Strapi](https://github.com/stackw3/templates/tree/main/astro-strapi)  
- - [Next-hover-base](https://github.com/stackw3/templates/tree/main/next-hover-base)
- - [Next-react-query](https://github.com/stackw3/templates/tree/main/next-react-query)
- - [React-base-router-config](https://github.com/stackw3/templates/tree/main/react-base-router-configs)
- - [React-base-testing-library-apollo](https://github.com/stackw3/templates/tree/main/react-base-testing-library-apollo)
- - [React-base-testing-library-react-query](https://github.com/stackw3/templates/tree/main/react-base-testing-library-react-query)
- - [React-base-testing-library](https://github.com/stackw3/templates/tree/main/react-base-testing-library)
- - [React-base](https://github.com/stackw3/templates/tree/main/react-base)
+- [@Akhil VC](https://github.com/akhilvc10)
+- [@Ceejeey](https://github.com/akhilvc10)
+- [@Nitin Sirsath](https://github.com/NitinSirsath)
+- [@Abhinav Kumar](https://github.com/abhin1509)
+- [@soham Tamboli](https://github.com/sohamtamboli)
