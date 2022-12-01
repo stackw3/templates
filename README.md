@@ -14,6 +14,12 @@
 
 ## Badges
 
+![](https://img.shields.io/github/languages/code-size/stackw3/templates)
+![](https://img.shields.io/github/directory-file-count/stackw3/templates?type=dir)
+![](https://img.shields.io/github/repo-size/stackw3/templates)
+![](https://img.shields.io/github/stars/stackw3/templates?style=social)
+![](https://img.shields.io/github/forks/stackw3/templates?style=social)
+
 ![](https://img.shields.io/github/languages/count/stackw3/templates)
 ![](https://img.shields.io/badge/templates-8-brightgreen)
 ![](https://img.shields.io/badge/all%20contributors-4-brightgreen)
