@@ -14,6 +14,7 @@
 
 ## Badges
 
+![](https://img.shields.io/github/languages/count/stackw3/templates)
 ![](https://img.shields.io/badge/templates-8-brightgreen)
 ![](https://img.shields.io/badge/all%20contributors-4-brightgreen)
 ![](https://img.shields.io/github/stars/stackw3/templates?style=social)
