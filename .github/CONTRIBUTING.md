@@ -8,7 +8,7 @@ Hello! We're really excited that you are interested in contributing to StackW3. 
 
 ## Getting Started
 
-1. Fork the repository from [Github](https://github.com/stackw3/templates).
+1. Fork templates repository from [here](https://github.com/stackw3/templates).
 2. Clone it to your local machine.
 3. Create a new branch before contributing.
 
@@ -16,13 +16,12 @@ Hello! We're really excited that you are interested in contributing to StackW3. 
 
 - Create a template folder following the naming conventions.
   - [Template Naming Conventions](https://github.com/stackw3/docs/blob/main/TEMPLATE_NAMING_CONVENTIONS.md)
+- Copy/Generate all the files in newly created template folder.
 
 ### Add README
 
 - Adding README to the template folder is mandatory.
-  - Fill all the basic details
-  - [Sample Template README](https://github.com/stackw3/docs/blob/main/SAMPLE_TEMPLATE_README.md)
-  - Update the following as per the template
+  - Update the Readme as per the [Sample Template README](https://github.com/stackw3/docs/blob/main/SAMPLE_TEMPLATE_README.md):
     - Name
     - Description
     - Tags
@@ -33,7 +32,5 @@ Hello! We're really excited that you are interested in contributing to StackW3. 
 
 ### Create Pull Request
 
-- Raise a PR and wait for checks to pass.
-  - Copy the following PR template and modify accordingly
-  - [Pull Request Template](https://github.com/stackw3/templates/blob/main/.github/PULL_REQUEST_TEMPLATE.md)
-  - Give an appriopriate label to PR. (New Template, Bug fix, Enhancement, etc.)
+- Raise a PR and fill the details accordingly.
+- Give an appriopriate label to PR. (New Template, Bug fix, Enhancement, etc.)
