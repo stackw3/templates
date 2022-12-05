@@ -1,7 +1,21 @@
 
 # StackW3 Templates
 
- It is a collection of standard templates, to copy any template go to [StackW3](https://www.stackw3.app/)
+ It is a collection of standard templates, to copy any template go to [StackW3](https://www.stackw3.app/)<br>
+ 
+![](https://img.shields.io/github/languages/count/stackw3/templates)
+![](https://img.shields.io/github/contributors/stackw3/templates)
+![](https://img.shields.io/github/stars/stackw3/templates?style=social)
+![](https://img.shields.io/github/forks/stackw3/templates?style=social)
+![](https://img.shields.io/github/watchers/stackw3/templates?style=social)
+
+![](https://img.shields.io/github/issues/stackw3/templates)
+![](https://img.shields.io/github/issues-closed/stackw3/templates)
+![](https://img.shields.io/github/issues-pr/stackw3/templates)
+![](https://img.shields.io/github/issues-pr-closed/stackw3/templates)
+
+![](https://img.shields.io/github/directory-file-count/stackw3/templates?type=dir)
+![](https://img.shields.io/github/repo-size/stackw3/templates)
 
 
 ### Features
@@ -11,27 +25,6 @@
 - Simplified package publishing. ...
 - Easier dependency management. ...
 - Re-use code with shared packages while still keeping them isolated.
-
-
-## Badges
-
-![](https://img.shields.io/github/languages/code-size/stackw3/templates)
-![](https://img.shields.io/github/directory-file-count/stackw3/templates?type=dir)
-![](https://img.shields.io/github/repo-size/stackw3/templates)
-![](https://img.shields.io/github/downloads/stackw3/templates/total)
-![](https://img.shields.io/github/commit-activity/y/stackw3/templates/abhinav/template)
-![](https://img.shields.io/github/last-commit/stackw3/templates/abhinav/template)
-
-![](https://img.shields.io/github/languages/count/stackw3/templates)
-![](https://img.shields.io/badge/templates-8-brightgreen)
-![](https://img.shields.io/github/contributors/stackw3/templates)
-![](https://img.shields.io/github/stars/stackw3/templates?style=social)
-![](https://img.shields.io/github/forks/stackw3/templates?style=social)
-![](https://img.shields.io/github/watchers/stackw3/templates?style=social)
-![](https://img.shields.io/github/issues/stackw3/templates)
-![](https://img.shields.io/github/issues-closed/stackw3/templates)
-![](https://img.shields.io/github/issues-pr/stackw3/templates)
-![](https://img.shields.io/github/issues-pr-closed/stackw3/templates)
 
 
 ## Templates
