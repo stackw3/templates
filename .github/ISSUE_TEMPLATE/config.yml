@@ -1,0 +1,5 @@
+blank_issues_enabled: true  # default: true
+contact_links:
+- name: 💻 Request new template
+  url: https://docs.google.com/spreadsheets/d/1dwGC2EZJV2fQ5YHTLtA3w-K6zMuPRnmyiLqtD3UF35Q
+  about: For AntStack only 🤷
