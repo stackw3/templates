@@ -1,0 +1,21 @@
+name: update template json
+
+on:
+  push:
+    branches:
+      - dev
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  build-node:
+    runs-on: ubuntu-latest
+    container: node:16 
+    steps:
+      - run: node --version
+      - run: npm --version
+      - uses: actions/checkout@v3
+      - run: npm install
+        working-directory: ./.github/action
+      - run: node index.js
+        working-directory: ./.github/action
