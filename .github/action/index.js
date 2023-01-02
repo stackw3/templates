@@ -91,9 +91,6 @@ async function updateFile() {
 
     let templates = [];
     for (let item of trees) {
-      if (item.path === "astro-strapi") {
-        continue;
-      }
       let { path, sha } = item;
       let name, description, tags, dependencies;
       name = path;
@@ -150,16 +147,18 @@ async function updateFile() {
         console.error(error);
       });
 
-    let oldContent = res2.data;
+    let oldContentBase64 = Buffer.from(JSON.stringify(res2.data, null, 4)).toString(
+      "base64"
+    );
+    const templatesBase64 = Buffer.from(JSON.stringify(templates, null, 4)).toString(
+      "base64"
+    );
 
     // check before commit that previous file should not be same as current
-    if (JSON.stringify(oldContent) === JSON.stringify(templates)) {
+    if (oldContentBase64 === templatesBase64) {
       console.log("same content so, don't commit");
     } else {
       console.log("diff content so, do commit");
-      const inBase64 = Buffer.from(JSON.stringify(templates)).toString(
-        "base64"
-      );
       const commitRes = await octokit.request(
         "PUT /repos/{owner}/{repo}/contents/{path}",
         {
@@ -173,13 +172,13 @@ async function updateFile() {
             name: "stackw3",
             email: "info@stackw3.app",
           },
-          content: inBase64,
+          content: templatesBase64,
         }
       );
       if (commitRes.status === 200) {
         console.log("commit successful");
         console.log(templates);
-        console.log(inBase64);
+        console.log(templatesBase64);
         console.log(commitRes.data);
       } else {
         console.log("commit UNSUCCESSFUL");
