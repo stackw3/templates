@@ -90,6 +90,7 @@ async function updateFile() {
     );
 
     let templates = [];
+    let id = 0;
     for (let item of trees) {
       let { path, sha } = item;
       let name, description, tags, dependencies;
@@ -135,7 +136,8 @@ async function updateFile() {
         }
       }
 
-      templates.push({ name, sha, description, tags, dependencies });
+      id++;
+      templates.push({ id, name, sha, description, tags, dependencies });
     }
 
     const tempURL = `https://raw.githubusercontent.com/${owner}/templates/${branch}/templates.json`;
