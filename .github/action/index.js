@@ -3,9 +3,10 @@ const { Octokit } = require("@octokit/rest");
 
 const owner = "stackw3";
 const branch = "main";
-const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
-});
+const octokit = new Octokit();
+
+const THIS_TOKEN = process.env.GITHUB_TOKEN;
+const GH_TOKEN = process.env.GH_TOKEN;
 
 const getDependencies = (arr, start) => {
   const temp = [];
@@ -64,13 +65,14 @@ const getTags = (arr, start) => {
   return ans;
 };
 
-const getTemplatesSha = async() => {
+const getTemplatesSha = async () => {
   const { data } = await octokit.request(
     "GET /repos/{owner}/{repo}/git/trees/{tree_sha}",
     {
       owner: owner,
       repo: "homepage",
       tree_sha: branch,
+      headers: { Authorization: `Bearer ${GH_TOKEN}` },
     }
   );
   const { tree } = data;
@@ -83,7 +85,7 @@ const getTemplatesSha = async() => {
     }
   }
   return templatesSha;
-}
+};
 
 async function updateFile() {
   try {
@@ -93,6 +95,7 @@ async function updateFile() {
         owner: owner,
         repo: "templates",
         tree_sha: branch,
+        headers: { Authorization: `Bearer ${THIS_TOKEN}` },
       }
     );
     const { tree } = data;
@@ -167,7 +170,7 @@ async function updateFile() {
       JSON.stringify(templates, null, 4)
     ).toString("base64");
 
-    let templatesSha = getTemplatesSha();
+    let templatesSha = await getTemplatesSha();
 
     // check before commit that previous file should not be same as current
     if (oldContentBase64 === templatesBase64) {
@@ -191,6 +194,7 @@ async function updateFile() {
             email: "info@stackw3.app",
           },
           content: templatesBase64,
+          headers: { Authorization: `Bearer ${GH_TOKEN}` },
         }
       );
       if (commitRes.status === 200) {
