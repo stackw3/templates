@@ -171,7 +171,6 @@ async function updateFile() {
     ).toString("base64");
 
     let templatesSha = await getTemplatesSha();
-    console.log("templatesSha:: ", templatesSha);
 
     // check before commit that previous file should not be same as current
     if (oldContentBase64 === templatesBase64) {
