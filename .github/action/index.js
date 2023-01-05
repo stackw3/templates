@@ -170,7 +170,7 @@ async function updateFile() {
       JSON.stringify(templates, null, 4)
     ).toString("base64");
 
-    let templatesSha = getTemplatesSha();
+    let templatesSha = await getTemplatesSha();
     console.log("templatesSha:: ", templatesSha);
 
     // check before commit that previous file should not be same as current
