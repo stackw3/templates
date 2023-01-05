@@ -218,5 +218,21 @@
             "vite",
             "husky"
         ]
+    },
+    {
+        "id": 9,
+        "name": "test-template1",
+        "sha": "e4b81dc34d6a88032eb5e406189515ccfac20af0",
+        "description": "A test template to test our new feature. This will automatically list new template which gets merged in our monorepo.",
+        "tags": [
+            "test",
+            "template",
+            "new"
+        ],
+        "dependencies": [
+            "dummy",
+            "test",
+            "template"
+        ]
     }
 ]
