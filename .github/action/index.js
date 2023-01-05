@@ -64,6 +64,27 @@ const getTags = (arr, start) => {
   return ans;
 };
 
+const getTemplatesSha = async() => {
+  const { data } = await octokit.request(
+    "GET /repos/{owner}/{repo}/git/trees/{tree_sha}",
+    {
+      owner: owner,
+      repo: "homepage",
+      tree_sha: branch,
+    }
+  );
+  const { tree } = data;
+
+  let templatesSha = "";
+  for (let it of tree) {
+    if (it.path === "templates.json") {
+      templatesSha += it.sha;
+      break;
+    }
+  }
+  return templatesSha;
+}
+
 async function updateFile() {
   try {
     const { data } = await octokit.request(
@@ -75,14 +96,6 @@ async function updateFile() {
       }
     );
     const { tree } = data;
-
-    let templatesSha = "";
-    for (let it of tree) {
-      if (it.path === "templates.json") {
-        templatesSha += it.sha;
-        break;
-      }
-    }
 
     // filter directories and remove .github
     const trees = tree.filter(
@@ -138,7 +151,7 @@ async function updateFile() {
       templates.push({ id, name, sha, description, tags, dependencies });
     }
 
-    const tempURL = `https://raw.githubusercontent.com/${owner}/templates/${branch}/templates.json`;
+    const tempURL = `https://raw.githubusercontent.com/${owner}/homepage/${branch}/templates.json`;
     const res2 = await axios
       .get(tempURL, {
         responseType: "json",
@@ -154,6 +167,8 @@ async function updateFile() {
       JSON.stringify(templates, null, 4)
     ).toString("base64");
 
+    let templatesSha = getTemplatesSha();
+
     // check before commit that previous file should not be same as current
     if (oldContentBase64 === templatesBase64) {
       console.log("same content so, don't commit");
@@ -163,7 +178,7 @@ async function updateFile() {
         "PUT /repos/{owner}/{repo}/contents/{path}",
         {
           owner: owner,
-          repo: "templates",
+          repo: "homepage",
           path: "templates.json",
           message: "update templates.json",
           branch: branch,
