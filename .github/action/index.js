@@ -24,8 +24,8 @@ const getDependencies = (arr, start) => {
 
   let ans = [];
   if (temp.length != 0) {
-    for (let i = 0; i < temp.length; i++) {
-      let string = temp[i];
+    for (let dep of temp) {
+      let string = dep;
       let lastPos = string.indexOf("`", 1);
       let ele = string.slice(1, lastPos);
       ans.push(ele);
@@ -50,8 +50,8 @@ const getTags = (arr, start) => {
   // formatting tags
   let ans = [];
   if (temp.length != 0) {
-    for (let i = 0; i < temp.length; i++) {
-      let string = temp[i];
+    for (let tag of temp) {
+      let string = tag;
       let firstPos = string.indexOf("-", 1);
       let lastPos = string.indexOf("-informational", firstPos + 1);
       let ele = string.slice(firstPos + 1, lastPos);
@@ -105,10 +105,8 @@ async function updateFile() {
           console.error(error);
         });
 
-      let contentData = res1.data;
-
       // readme content
-      // console.log(contentData);
+      let contentData = res1.data;
 
       const info = contentData.split("\n");
 
@@ -149,12 +147,12 @@ async function updateFile() {
         console.error(error);
       });
 
-    let oldContentBase64 = Buffer.from(JSON.stringify(res2.data, null, 4)).toString(
-      "base64"
-    );
-    const templatesBase64 = Buffer.from(JSON.stringify(templates, null, 4)).toString(
-      "base64"
-    );
+    let oldContentBase64 = Buffer.from(
+      JSON.stringify(res2.data, null, 4)
+    ).toString("base64");
+    const templatesBase64 = Buffer.from(
+      JSON.stringify(templates, null, 4)
+    ).toString("base64");
 
     // check before commit that previous file should not be same as current
     if (oldContentBase64 === templatesBase64) {
