@@ -2,7 +2,7 @@ const axios = require("axios");
 const { Octokit } = require("@octokit/rest");
 
 const owner = "stackw3";
-const branch = "main";
+const branch = "dev";
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
 });

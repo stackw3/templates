@@ -3,7 +3,7 @@ name: update template json
 on:
   push:
     branches:
-      - main
+      - dev
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
