@@ -172,6 +172,9 @@ async function updateFile() {
     // check before commit that previous file should not be same as current
     if (oldContentBase64 === templatesBase64) {
       console.log("same content so, don't commit");
+      console.log("templates:: ", templates);
+      console.log("oldContentBase64:: ", oldContentBase64);
+      console.log("templatesBase64:: ", templatesBase64);
     } else {
       console.log("diff content so, do commit");
       const commitRes = await octokit.request(
