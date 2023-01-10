@@ -3,6 +3,15 @@
 🚀 A React quick start project template powered by vite.
 
 
+## Tags
+
+![](https://img.shields.io/badge/-react-informational)
+![](https://img.shields.io/badge/-vite-informational)
+![](https://img.shields.io/badge/-husky-informational)
+![](https://img.shields.io/badge/-eslint-informational)
+![](https://img.shields.io/badge/-eslint%20prettier-informational)
+
+
 ## Dependencies
 
 `@types/react`<br/>
