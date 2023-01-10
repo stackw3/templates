@@ -1,7 +1,7 @@
 const axios = require("axios");
 const { Octokit } = require("@octokit/rest");
 
-const owner = "abhin1509";
+const owner = "stackw3";
 const repo = "templates";
 const branch = "main";
 const octokit = new Octokit({
