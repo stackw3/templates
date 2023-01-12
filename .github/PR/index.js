@@ -8,7 +8,7 @@ const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
 });
 
-const admins = ["abhin1509", "akhilvc10", "ceejeey", "stackw3"];
+const admins = ["abhin1509", "akhilvc10", "ceejeey", "stackw3", "antstackio"];
 
 const readmeLink = "https://stackw3.app/readme-generator";
 
