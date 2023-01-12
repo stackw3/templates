@@ -2,6 +2,12 @@
 
 🚀 A Next.js quick start project template powered by hover.style
 
+## Tags
+
+![](https://img.shields.io/badge/-react-informational)
+![](https://img.shields.io/badge/-hover-informational)
+![](https://img.shields.io/badge/-next.js-informational)
+
 ## Dependencies
 
 `@hover-design/react`<br/>
