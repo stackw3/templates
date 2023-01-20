@@ -5,6 +5,7 @@
 
 ## Tags
 ![](https://img.shields.io/badge/-react%20native-informational)
+![](https://img.shields.io/badge/-react%20native%20cli-informational)
 ![](https://img.shields.io/badge/-react-informational)
 ![](https://img.shields.io/badge/-typescript-informational)
 
@@ -26,9 +27,9 @@
 
 
 ## Setup Guide
-* yarn install (for installing dependencies).
-* cd ios && pod install && cd .. (for installing pods for ios).
-* yarn start (for starting metro bundler).
-* yarn android (for running android app).
-* yarn ios (for running ios application)
-
+- Make sure you have setup the react-native-cli environment. [Choose react-native-cli setup if you don't.](http://reactnative.dev/docs/environment-setup)
+- yarn install (for installing dependencies).
+- cd ios && pod install && cd .. (for installing pods for ios).
+- yarn start (for starting metro bundler).
+- yarn ios (for running ios application).
+- yarn android (for running android app. Make sure android virtual device is running).
