@@ -8,8 +8,6 @@ const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
 });
 
-const admins = ["abhin1509", "akhilvc10", "ceejeey", "stackw3", "antstackio"];
-
 const readmeLink = "https://stackw3.app/readme-generator";
 
 async function commentOnPR(prNo, msg) {
@@ -96,6 +94,75 @@ const isNewTemplate = (modifiedFolder, existingFolder) => {
   }
 };
 
+async function deletingTemplate(prFiles, modifiedFolder) {
+  // return true if deleting a template else return false
+
+  let tempModifiedFolder = new Set(modifiedFolder);
+  tempModifiedFolder.forEach(async function (val) {
+    // val is each template name in prFiles
+    // get it's hash 
+    let shaTemplate;
+    const selectedTemplateRes = await octokit.request(
+      "GET /repos/{owner}/{repo}/git/trees/main", {
+        owner: owner,
+        repo: repo,
+      }
+    );
+    for (let i = 0; i < selectedTemplateRes.data.tree.length; i++) {
+      if (selectedTemplateRes.data.tree[i].path === val) {
+        shaTemplate = selectedTemplateRes.data.tree[i].sha;
+        break;
+      }
+    }
+
+    // get all it's files in val template
+    let { data } = await octokit.request(
+      "GET /repos/{owner}/{repo}/git/trees/{tree_sha}",
+      {
+        owner: owner,
+        repo: repo,
+        tree_sha: shaTemplate,
+        recursive: 1,
+      }
+    );
+
+    let { tree } = data;
+
+    for (const item of tree) {
+      if (item.type === "blob") {
+        let existingFile = item.path;
+        // this existing file should be deleted in prFiles
+        
+        let isFileDeleted = false;
+        for(let pr of prFiles) {
+          let { filename, status, additions } = pr;
+          if(existingFile === filename && status === "removed" && additions === 0) {
+            isFileDeleted = true;
+            break;
+          }
+        }
+
+        if(!isFileDeleted) {
+          return false;
+        }
+      }
+    }
+
+  });
+  return true;
+}
+
+async function isAdmin() {
+  let ADMINS = process.env.ADMINS;
+  let ACTOR_NAME = process.env.GITHUB_ACTOR;
+  console.log("actor_name:: ", ACTOR_NAME);
+  for(let index=0; index<ADMINS.split(",").length; index++) {
+    if(ADMINS.split(",")[index] === ACTOR_NAME) {
+        return true;
+    }
+  }
+  return false;
+}
 
 async function validatePR() {
   let prNo = process.env.PR_NUMBER;
@@ -120,9 +187,12 @@ async function validatePR() {
     let pr = res2.data[i];
     let { filename } = pr;
 
-    if(filename.includes(".github")) {
-      if(!admins.includes(process.env.GITHUB_ACTOR)) {
-        await commentOnPR(prNo, ":x: An error occurred: As you are not an admin user, you are not permitted to make changes to the .github folder.");
+    if (filename.includes(".github")) {
+      if (!isAdmin()) {
+        await commentOnPR(
+          prNo,
+          ":x: An error occurred: As you are not an admin user, you are not permitted to make changes to the .github folder."
+        );
       }
       continue;
     }
@@ -185,6 +255,20 @@ async function validatePR() {
     });
   } else {
     console.log("existing template is edited");
+
+    // case where template is deleted
+    if (deletingTemplate(res2.data, modifiedFolder)) {
+      console.log("template is now being deleted");
+      if (!isAdmin()) {
+        console.log("only admins can delete the template");
+        await commentOnPR(
+          prNo,
+          ":x: Only individuals with admin privileges are able to delete the template, therefore it is suggested to create an issue with an explanation for admin attention to delete the template."
+        );
+      }
+      return;
+    }
+
     // check if readme is edited or not for every folder in modifiedFolder
     modifiedFolder.forEach(async function (folder) {
       for (let i = 0; i < res2.data.length; i++) {
