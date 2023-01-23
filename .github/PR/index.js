@@ -109,6 +109,7 @@ async function deletingTemplate(prFiles, modifiedFolder) {
         repo: repo,
       }
     );
+    console.log(selectedTemplateRes);
     for (let i = 0; i < selectedTemplateRes.data.tree.length; i++) {
       if (selectedTemplateRes.data.tree[i].path === val) {
         shaTemplate = selectedTemplateRes.data.tree[i].sha;
