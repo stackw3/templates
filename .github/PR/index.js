@@ -266,34 +266,35 @@ async function validatePR() {
         );
       }
       return;
-    }
-
-    // check if readme is edited or not for every folder in modifiedFolder
-    modifiedFolder.forEach(async function (folder) {
-      for (let i = 0; i < res2.data.length; i++) {
-        let targerFolder = `${folder}/README.md`;
-        if (res2.data[i].filename === targerFolder) {
-          // either readme is edited or removed
-          if(res2.data[i].status === "removed") {
-            msg += `:warning: An error occurred: The README.md file is missing in the existing template you are trying to modify.`;
-            // Condn: after removing check if he is again adding that or not in same pr
-            console.log("msg :: ", msg);
-            await commentOnPR(prNo, msg);
-          } else {
-            console.log("README.md file is edited in the existing template");
-            let isReadmeValid = await validReadme(res2.data[i].raw_url, folder);
-            console.log("isReadmeValid:: ", isReadmeValid);
-            if (!isReadmeValid) {
-              // readme is invalid
-              msg += `:warning: An error occurred: The README.md file in the existing template you are trying to modify has been edited and is now invalid. To ensure that a valid README.md file is present in the template, you can use our [README generator](${readmeLink}) to create one.`;
+    } else {
+      // check if readme is edited or not for every folder in modifiedFolder
+      modifiedFolder.forEach(async function (folder) {
+        for (let i = 0; i < res2.data.length; i++) {
+          let targerFolder = `${folder}/README.md`;
+          if (res2.data[i].filename === targerFolder) {
+            // either readme is edited or removed
+            if(res2.data[i].status === "removed") {
+              msg += `:warning: An error occurred: The README.md file is missing in the existing template you are trying to modify.`;
+              // Condn: after removing check if he is again adding that or not in same pr
               console.log("msg :: ", msg);
               await commentOnPR(prNo, msg);
-            }  
+            } else {
+              console.log("README.md file is edited in the existing template");
+              let isReadmeValid = await validReadme(res2.data[i].raw_url, folder);
+              console.log("isReadmeValid:: ", isReadmeValid);
+              if (!isReadmeValid) {
+                // readme is invalid
+                msg += `:warning: An error occurred: The README.md file in the existing template you are trying to modify has been edited and is now invalid. To ensure that a valid README.md file is present in the template, you can use our [README generator](${readmeLink}) to create one.`;
+                console.log("msg :: ", msg);
+                await commentOnPR(prNo, msg);
+              }  
+            }
+            break;
           }
-          break;
         }
-      }
-    });
+      });
+    }
+
   }
 }
 validatePR();
