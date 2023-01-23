@@ -133,22 +133,20 @@ async function deletingTemplate(prFiles, modifiedFolder) {
         let existingFile = item.path;
         // this existing file should be deleted in prFiles
         
-        let isFileDeleted = false;
         for(let pr of prFiles) {
           let { filename, status, additions } = pr;
+          console.log(filename, existingFile, status);
           if(existingFile === filename && status === "removed" && additions === 0) {
-            isFileDeleted = true;
-            break;
+            console.log("false");
+            return false;
           }
         }
 
-        if(!isFileDeleted) {
-          return false;
-        }
       }
     }
 
   });
+  console.log("true");
   return true;
 }
 
