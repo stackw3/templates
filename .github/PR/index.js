@@ -96,9 +96,8 @@ const isNewTemplate = (modifiedFolder, existingFolder) => {
 
 async function deletingTemplate(prFiles, modifiedFolder) {
   // return true if deleting a template else return false
-  console.log("in deleting fn")
   if(modifiedFolder.size === 0) {
-    console.log("fasle as 0");
+    console.log("false");
     return false;
   }
   let tempModifiedFolder = new Set(modifiedFolder);
@@ -257,8 +256,6 @@ async function validatePR() {
     console.log("existing template is edited");
 
     // case where template is deleted
-    // let isTemplateDeleted = await deletingTemplate(res2.data, modifiedFolder);
-    // console.log("isTemplateDeleted:: ", isTemplateDeleted);
     if (deletingTemplate(res2.data, modifiedFolder) === true) {
       console.log("template is now being deleted");
       if (!isAdmin()) {
