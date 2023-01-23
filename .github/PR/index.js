@@ -96,7 +96,9 @@ const isNewTemplate = (modifiedFolder, existingFolder) => {
 
 async function deletingTemplate(prFiles, modifiedFolder) {
   // return true if deleting a template else return false
+  console.log("in deleting fn")
   if(modifiedFolder.size === 0) {
+    console.log("false");
     return false;
   }
   let tempModifiedFolder = new Set(modifiedFolder);
