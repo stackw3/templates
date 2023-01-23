@@ -255,7 +255,7 @@ async function validatePR() {
     console.log("existing template is edited");
 
     // case where template is deleted
-    let isTemplateDeleted = deletingTemplate(res2.data, modifiedFolder);
+    let isTemplateDeleted = await deletingTemplate(res2.data, modifiedFolder);
     console.log("isTemplateDeleted:: ", isTemplateDeleted);
     if (isTemplateDeleted) {
       console.log("template is now being deleted");
