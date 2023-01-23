@@ -127,6 +127,7 @@ async function deletingTemplate(prFiles, modifiedFolder) {
     );
 
     let { tree } = data;
+    console.log("tree::", tree);
 
     for (const item of tree) {
       if (item.type === "blob") {
