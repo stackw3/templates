@@ -98,6 +98,7 @@ async function deletingTemplate(prFiles, modifiedFolder) {
   // return true if deleting a template else return false
   console.log("in deleting fn")
   if(modifiedFolder.size === 0) {
+    console.log("fasle as 0");
     return false;
   }
   let tempModifiedFolder = new Set(modifiedFolder);
@@ -147,6 +148,7 @@ async function deletingTemplate(prFiles, modifiedFolder) {
     }
 
   });
+  console.log("true");
   return true;
 }
 
@@ -257,7 +259,7 @@ async function validatePR() {
     // case where template is deleted
     // let isTemplateDeleted = await deletingTemplate(res2.data, modifiedFolder);
     // console.log("isTemplateDeleted:: ", isTemplateDeleted);
-    if (deletingTemplate(res2.data, modifiedFolder) === false) {
+    if (deletingTemplate(res2.data, modifiedFolder) === true) {
       console.log("template is now being deleted");
       if (!isAdmin()) {
         console.log("only admins can delete the template");
