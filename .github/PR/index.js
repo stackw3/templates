@@ -98,6 +98,7 @@ async function deletingTemplate(prFiles, modifiedFolder) {
   // return true if deleting a template else return false
   console.log("in deleting fn");
   let tempModifiedFolder = new Set(modifiedFolder);
+  console.log("modifiedFolder:: ", tempModifiedFolder);
   tempModifiedFolder.forEach(async function (val) {
     // val is each template name in prFiles
     // get it's hash 
