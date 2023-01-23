@@ -256,7 +256,7 @@ async function validatePR() {
     console.log("existing template is edited");
 
     // case where template is deleted
-    if (deletingTemplate(res2.data, modifiedFolder) === true) {
+    if (await deletingTemplate(res2.data, modifiedFolder) === true) {
       console.log("template is now being deleted");
       if (!isAdmin()) {
         console.log("only admins can delete the template");
