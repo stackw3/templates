@@ -96,9 +96,10 @@ const isNewTemplate = (modifiedFolder, existingFolder) => {
 
 async function deletingTemplate(prFiles, modifiedFolder) {
   // return true if deleting a template else return false
-  console.log("in deleting fn");
+  if(modifiedFolder.size === 0) {
+    return false;
+  }
   let tempModifiedFolder = new Set(modifiedFolder);
-  console.log("modifiedFolder:: ", tempModifiedFolder);
   tempModifiedFolder.forEach(async function (val) {
     // val is each template name in prFiles
     // get it's hash 
@@ -109,7 +110,6 @@ async function deletingTemplate(prFiles, modifiedFolder) {
         repo: repo,
       }
     );
-    console.log(selectedTemplateRes);
     for (let i = 0; i < selectedTemplateRes.data.tree.length; i++) {
       if (selectedTemplateRes.data.tree[i].path === val) {
         shaTemplate = selectedTemplateRes.data.tree[i].sha;
@@ -129,7 +129,6 @@ async function deletingTemplate(prFiles, modifiedFolder) {
     );
 
     let { tree } = data;
-    console.log("tree::", tree);
 
     for (const item of tree) {
       if (item.type === "blob") {
@@ -138,9 +137,7 @@ async function deletingTemplate(prFiles, modifiedFolder) {
         
         for(let pr of prFiles) {
           let { filename, status, additions } = pr;
-          console.log(filename, existingFile, status);
           if(existingFile === filename && status === "removed" && additions === 0) {
-            console.log("false");
             return false;
           }
         }
