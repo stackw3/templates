@@ -96,17 +96,18 @@ const isNewTemplate = (modifiedFolder, existingFolder) => {
 
 async function deletingTemplate(prFiles, modifiedFolder) {
   // return true if deleting a template else return false
-  if(modifiedFolder.size === 0) {
+  if (modifiedFolder.size === 0) {
     console.log("false");
     return false;
   }
   let tempModifiedFolder = new Set(modifiedFolder);
   tempModifiedFolder.forEach(async function (val) {
     // val is each template name in prFiles
-    // get it's hash 
+    // get it's hash
     let shaTemplate;
     const selectedTemplateRes = await octokit.request(
-      "GET /repos/{owner}/{repo}/git/trees/main", {
+      "GET /repos/{owner}/{repo}/git/trees/main",
+      {
         owner: owner,
         repo: repo,
       }
@@ -135,17 +136,19 @@ async function deletingTemplate(prFiles, modifiedFolder) {
       if (item.type === "blob") {
         let existingFile = item.path;
         // this existing file should be deleted in prFiles
-        
-        for(let pr of prFiles) {
+
+        for (let pr of prFiles) {
           let { filename, status, additions } = pr;
-          if(existingFile === filename && status === "removed" && additions === 0) {
+          if (
+            existingFile === filename &&
+            status === "removed" &&
+            additions === 0
+          ) {
             return false;
           }
         }
-
       }
     }
-
   });
   console.log("true");
   return true;
@@ -155,9 +158,9 @@ async function isAdmin() {
   let ADMINS = process.env.ADMINS;
   let ACTOR_NAME = process.env.GITHUB_ACTOR;
   console.log("actor_name:: ", ACTOR_NAME);
-  for(let index=0; index<ADMINS.split(",").length; index++) {
-    if(ADMINS.split(",")[index] === ACTOR_NAME) {
-        return true;
+  for (let index = 0; index < ADMINS.split(",").length; index++) {
+    if (ADMINS.split(",")[index] === ACTOR_NAME) {
+      return true;
     }
   }
   return false;
@@ -180,11 +183,17 @@ async function validatePR() {
     });
   console.log("pr files:: ", res2.data);
 
+  let indTempModifiedURL = "";
+
   // list of folders which are modified in the PR
   let modifiedFolder = new Set();
   for (let i = 0; i < res2.data.length; i++) {
     let pr = res2.data[i];
     let { filename } = pr;
+    if (filename === "IndependentTemplates.json") {
+      indTempModifiedURL = res2.data[i].raw_url;
+      continue;
+    }
 
     if (filename.includes(".github")) {
       if (!isAdmin()) {
@@ -197,6 +206,30 @@ async function validatePR() {
     }
     let folder = filename.split("/")[0];
     modifiedFolder.add(folder);
+  }
+
+  // check if independentTemplates.json is present and in correct format or not
+  if (indTempModifiedURL != "") {
+    const indTempRes = await axios
+      .get(indTempModifiedURL, {
+        responseType: "json",
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    for (temp of indTempRes.data) {
+      let { name, description, tags, dependencies } = temp;
+      if (!(name && description && tags && dependencies)) {
+        let msg = `:x: The modification made to the IndependentTemplates.json file appears to be incorrect, as crucial information such as name, description, tags, and dependencies seems to be missing. Kindly take the necessary steps to correct it.`;
+        console.log("msg :: ", msg);
+        await commentOnPR(prNo, msg);
+      }
+    }
+  }
+
+  if (modifiedFolder.size === 0) {
+    return;
   }
 
   // list of existing folders in the repo
@@ -256,7 +289,7 @@ async function validatePR() {
     console.log("existing template is edited");
 
     // case where template is deleted
-    if (await deletingTemplate(res2.data, modifiedFolder) === true) {
+    if ((await deletingTemplate(res2.data, modifiedFolder)) === true) {
       console.log("template is now being deleted");
       if (!isAdmin()) {
         console.log("only admins can delete the template");
@@ -274,7 +307,7 @@ async function validatePR() {
         let targerFolder = `${folder}/README.md`;
         if (res2.data[i].filename === targerFolder) {
           // either readme is edited or removed
-          if(res2.data[i].status === "removed") {
+          if (res2.data[i].status === "removed") {
             msg += `:warning: An error occurred: The README.md file is missing in the existing template you are trying to modify.`;
             // Condn: after removing check if he is again adding that or not in same pr
             console.log("msg :: ", msg);
@@ -288,7 +321,7 @@ async function validatePR() {
               msg += `:warning: An error occurred: The README.md file in the existing template you are trying to modify has been edited and is now invalid. To ensure that a valid README.md file is present in the template, you can use our [README generator](${readmeLink}) to create one.`;
               console.log("msg :: ", msg);
               await commentOnPR(prNo, msg);
-            }  
+            }
           }
           break;
         }
