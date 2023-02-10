@@ -151,7 +151,16 @@ async function updateFile() {
       }
 
       id++;
-      templates.push({ id, name, sha, description, tags, dependencies });
+      let maintainBy = "stackw3";
+      templates.push({
+        id,
+        name,
+        maintainBy,
+        sha,
+        description,
+        tags,
+        dependencies,
+      });
     }
 
     // update from independentTemplates.json
