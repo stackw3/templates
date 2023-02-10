@@ -154,6 +154,35 @@ async function updateFile() {
       templates.push({ id, name, sha, description, tags, dependencies });
     }
 
+    // update from independentTemplates.json
+    const indTemplatesURL = `https://raw.githubusercontent.com/${owner}/templates/${branch}/IndependentTemplates.json`;
+    const indTempRes = await axios
+      .get(indTemplatesURL, {
+        responseType: "json",
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    for (temp of indTempRes.data) {
+      let { name, description, tags, dependencies } = temp;
+      let maintainBy = name.substring(
+        name.indexOf("@") + 1,
+        name.lastIndexOf("/")
+      );
+      let sha = "00000";
+      id++;
+      templates.push({
+        id,
+        name,
+        maintainBy,
+        sha,
+        description,
+        tags,
+        dependencies,
+      });
+    }
+
     const tempURL = `https://raw.githubusercontent.com/${owner}/homepage/${branch}/templates.json`;
     const res2 = await axios
       .get(tempURL, {
