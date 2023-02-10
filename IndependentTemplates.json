@@ -1,0 +1,15 @@
+[
+    {
+      "name": "@akhilvc10/vite-vanilla-extract",
+      "description": "A Quick vite vanilla extract starter project template.",
+      "tags": ["vite", "vanilla"],
+      "dependencies": [
+        "react",
+        "react-dom",
+        "react-router-dom",
+        "@vanilla-extract/vite-plugin",
+        "@vanilla-extract/recipes"
+      ]
+    }
+  ]
+  
