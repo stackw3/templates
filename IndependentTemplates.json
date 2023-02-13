@@ -1,6 +1,7 @@
 [
     {
       "name": "@akhilvc10/vite-vanilla-extract",
+      "defaultBranch": "main",
       "description": "A Quick vite vanilla extract starter project template.",
       "tags": ["vite", "vanilla"],
       "dependencies": [

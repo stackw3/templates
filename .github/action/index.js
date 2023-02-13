@@ -174,12 +174,12 @@ async function updateFile() {
       });
 
     for (temp of indTempRes.data) {
-      let { name, description, tags, dependencies } = temp;
+      let { name, defaultBranch, description, tags, dependencies } = temp;
       let maintainBy = name.substring(
         name.indexOf("@") + 1,
         name.lastIndexOf("/")
       );
-      let sha = "00000";
+      let sha = defaultBranch;
       id++;
       templates.push({
         id,
