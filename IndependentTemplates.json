@@ -1,15 +1,12 @@
 [
     {
-      "name": "@akhilvc10/vite-vanilla-extract",
+      "name": "@ceejeey/Ideal-frontend",
       "defaultBranch": "main",
-      "description": "A Quick vite vanilla extract starter project template.",
-      "tags": ["vite", "vanilla"],
+      "description": "Ideal frontend starter project template.",
+      "tags": ["vite", "react"],
       "dependencies": [
         "react",
-        "react-dom",
-        "react-router-dom",
-        "@vanilla-extract/vite-plugin",
-        "@vanilla-extract/recipes"
+        "react-dom"
       ]
     }
   ]
