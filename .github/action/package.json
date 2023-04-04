@@ -3,6 +3,7 @@
   "main": "index.js",
   "dependencies": {
     "@octokit/rest": "^19.0.4",
+    "aws-sdk": "^2.1341.0",
     "axios": "^1.2.1"
   }
 }
